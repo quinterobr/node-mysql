@@ -7,9 +7,7 @@ const express_1 = require("express");
 const mysql_1 = __importDefault(require("../mysql/mysql"));
 const router = express_1.Router();
 router.get('/heroes', (req, res) => {
-    const query = `
-        SELECT * FROM heroes
-    `;
+    const query = `SELECT * FROM heroes`;
     mysql_1.default.ejecutarQuery(query, (err, heroes) => {
         if (err) {
             res.status(400).json({

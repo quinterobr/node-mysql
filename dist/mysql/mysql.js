@@ -18,9 +18,9 @@ class MySQL {
         //Haya varias cadenas de conexion
     }
     static ejecutarQuery(query, callback) {
-        this.instance.cnn.query(query, (err, results, fields) => {
+        this._instance.cnn.query(query, (err, results, fields) => {
             if (err) {
-                console.log('err in query');
+                console.log('error in query');
                 console.log(err);
                 return callback(err);
             }

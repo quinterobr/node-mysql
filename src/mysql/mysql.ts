@@ -24,14 +24,14 @@ export default class MySQL{
     }
 
     static ejecutarQuery(query: String, callback : Function){
-        this.instance.cnn.query(query,(err, results: Object[], fields: Object[]) =>{
+        this.instance.cnn.query(query, (err, results: Object[], fields)=>{
             if(err){
                 console.log('error in query');
                 console.log(err);
                 return callback(err);     
             }
             results.length === 0 ?  callback('El registro solicitado no existe') : callback(null, results);
-        });
+        })
     }
 
 
